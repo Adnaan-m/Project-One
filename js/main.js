@@ -9,14 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
   ['9',9],['10',10],['J',10],['Q',10],['K',10]];
   cards.cardSuit = ['Hearts','Diamonds','Spades','Clubs'];
 
-  //GATHERS THE START BUTTON
   game.startButn = document.getElementsByClassName('Start');
-  //GATHERS THE DEAL BUTTON
   game.dealButn = document.getElementsByClassName('Deal');
-  //GATHERS THE DEAL BUTTON
   game.stayButn = document.getElementsByClassName('Stand');
 
-  // DEAL RANDOM CARDS FUNCTION
   game.DealUser = () =>
   {
     let Name = cards.cardName[Math.floor(Math.random() * cards.cardName.length)];
@@ -30,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(cardTotUser);
 
   } ///END OF DEAL USER
-
   game.DealComp = () =>
   {
     let Name = cards.cardName[Math.floor(Math.random() * cards.cardName.length)];
@@ -56,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   } ///END OF DEALCOMP
 
-  //WHEN START BUTTON IS CLICKED, TWO RANDOM CARDS ARE PRESENTED
   game.startButn[0].addEventListener('click', () => {
     game.DealUser();
     game.DealUser();
@@ -64,15 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
     game.DealComp();
     game.DealComp();
   });
-
-  //WHEN DEAL BUTTON IS CLICKED, A RANDOM CARDS IS PRESENTED
   game.dealButn[0].addEventListener('click', () => {
     game.DealUser();
 
     game.DealComp();
   });
-
-  ////STAY BUTTON FUNCTIONAL
   game.stayButn[0].addEventListener('click', () => {
     if (cardTotUser === cardTotComp) {
       alert('Both Players Bust, It\'s A Draw!')
@@ -82,14 +72,5 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Computer wins.')
     }
   });
-
-
-
-
-
-
-
-
-
 
 }); //End of DOCUMENT Listener
