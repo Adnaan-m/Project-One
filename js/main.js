@@ -16,24 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   //GATHERS THE DEAL BUTTON
   game.stayButn = document.getElementsByClassName('Stand');
 
-
-  //WHEN START BUTTON IS CLICKED, TWO RANDOM CARDS ARE PRESENTED
-  game.startButn[0].addEventListener('click', () => {
-    game.DealUser();
-    game.DealUser();
-
-    game.DealComp();
-    game.DealComp();
-  });
-
-  //WHEN DEAL BUTTON IS CLICKED, A RANDOM CARDS IS PRESENTED
-  game.dealButn[0].addEventListener('click', () => {
-    game.DealUser();
-
-    game.DealComp();
-  });
-
-
   // DEAL RANDOM CARDS FUNCTION
   game.DealUser = () =>
   {
@@ -73,6 +55,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
   } ///END OF DEALCOMP
+  
+  //WHEN START BUTTON IS CLICKED, TWO RANDOM CARDS ARE PRESENTED
+  game.startButn[0].addEventListener('click', () => {
+    game.DealUser();
+    game.DealUser();
+
+    game.DealComp();
+    game.DealComp();
+  });
+
+  //WHEN DEAL BUTTON IS CLICKED, A RANDOM CARDS IS PRESENTED
+  game.dealButn[0].addEventListener('click', () => {
+    game.DealUser();
+
+    game.DealComp();
+  });
 
   ////STAY BUTTON FUNCTIONAL
   game.stayButn[0].addEventListener('click', () => {
