@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const game = new Object();
   const cards = new Object();
+  let cardTotUser = Number([]);
+  let cardTotComp = Number([]);
 
   cards.cardName = [['A',11],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7],['8',8],
   ['9',9],['10',10],['J',10],['Q',10],['K',10]];
@@ -17,33 +19,71 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //WHEN START BUTTON IS CLICKED, TWO RANDOM CARDS ARE PRESENTED
   game.startButn[0].addEventListener('click', () => {
-    game.Deal();
-    game.Deal();
+    game.DealUser();
+    game.DealUser();
+
+    game.DealComp();
+    game.DealComp();
   });
 
   //WHEN DEAL BUTTON IS CLICKED, A RANDOM CARDS IS PRESENTED
   game.dealButn[0].addEventListener('click', () => {
+    game.DealUser();
 
-  game.Deal();
-
+    game.DealComp();
   });
 
-  let cardTot = Number([]);
 
   // DEAL RANDOM CARDS FUNCTION
-  game.Deal = () =>
+  game.DealUser = () =>
   {
-     let Name = cards.cardName[Math.floor(Math.random() * cards.cardName.length)];
-     let Val = Name[1];
-     let Suit = cards.cardSuit[Math.floor(Math.random() * cards.cardSuit.length)];
+    let Name = cards.cardName[Math.floor(Math.random() * cards.cardName.length)];
+    let Val = Name[1];
+    let Suit = cards.cardSuit[Math.floor(Math.random() * cards.cardSuit.length)];
 
-     let card1 = Name[0] + Number(Val) + Suit;
-     console.log(card1);
+    let card = Name[0] + Number(Val) + Suit;
+    console.log(card);
 
-     cardTot += Val;
-     console.log(cardTot);
+    cardTotUser += Val;
+    console.log(cardTotUser);
 
-}
+  } ///END OF DEAL USER
+
+  game.DealComp = () =>
+  {
+    let Name = cards.cardName[Math.floor(Math.random() * cards.cardName.length)];
+    let Val = Name[1];
+    let Suit = cards.cardSuit[Math.floor(Math.random() * cards.cardSuit.length)];
+
+    let card = Name[0] + Number(Val) + Suit;
+    console.log(card);
+
+    cardTotComp += Val;
+    console.log(cardTotComp);
+
+    /////IF STATEMENT FOR GOING BUST
+    if (cardTotUser > 21 && cardTotComp > 21) {
+      alert('Both Players Bust, It\'s A Draw!');
+    }else if (cardTotUser > 21 && cardTotComp <=21) {
+      alert('Player Bust, Computer wins');
+    }else if (cardTotComp > 21 && cardTotUser <= 21) {
+      alert('Computer Bust, Player Wins');
+    }else if (cardTotComp === cardTotUser) {
+        alert('It\'s a Draw!');
+    }
+
+  } ///END OF DEALCOMP
+
+  ////STAY BUTTON FUNCTIONAL
+  game.stayButn[0].addEventListener('click', () => {
+    if (cardTotUser === cardTotComp) {
+      alert('Both Players Bust, It\'s A Draw!')
+    }else if (cardTotUser > cardTotComp) {
+      alert('User wins.')
+    }else {
+      alert('Computer wins.')
+    }
+  });
 
 
 
@@ -54,11 +94,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-
-
-
-
-});
+}); //End of DOCUMENT Listener
