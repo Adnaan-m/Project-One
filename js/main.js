@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const game = new Object();
   const cards = new Object();
 
-  cards.cardName = [['Ace',11],['Two',2],['Three',3],['Four',4],['Five',5],['Six',6],['Seven',7],['Eight',8],
-  ['Nine',9],['Ten',10],['Jack',10],['Queen',10],['King',10]];
+  cards.cardName = [['A',11],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7],['8',8],
+  ['9',9],['10',10],['J',10],['Q',10],['K',10]];
   cards.cardSuit = ['Hearts','Diamonds','Spades','Clubs'];
 
   //GATHERS THE START BUTTON
@@ -23,30 +23,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //WHEN DEAL BUTTON IS CLICKED, A RANDOM CARDS IS PRESENTED
   game.dealButn[0].addEventListener('click', () => {
-    game.Deal();
+
+  game.Deal();
+
   });
 
+  let cardTot = Number([]);
+
   // DEAL RANDOM CARDS FUNCTION
-  game.Deal = (Name,Val,Suit) =>
+  game.Deal = () =>
   {
-     Name = cards.cardName[Math.floor(Math.random() * cards.cardName.length)];
-     Val = Name[1];
-     Suit = cards.cardSuit[Math.floor(Math.random() * cards.cardSuit.length)];
+     let Name = cards.cardName[Math.floor(Math.random() * cards.cardName.length)];
+     let Val = Name[1];
+     let Suit = cards.cardSuit[Math.floor(Math.random() * cards.cardSuit.length)];
 
-    let card1 = Name[0] + Val + Suit;
-    console.log(card1);
+     let card1 = Name[0] + Number(Val) + Suit;
+     console.log(card1);
+
+     cardTot += Val;
+     console.log(cardTot);
+
 }
-      // let cardTot = [];
-      // const currentScore = 0;
-
-  //     sumCardTotal
-  //
-  //   }
-  //
-  //
-  // }
-
-
 
 
 
