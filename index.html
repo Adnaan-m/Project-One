@@ -5,16 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Project One - Blackjack</title>
-  <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-  <script src="css/bootstrap-3.3.7-dist/js/bootstrap.min.js" charset="utf-8"></script>
+
   <link rel="stylesheet" href="css/main.css">
   <script src="js/main.js"></script>
 </head>
 <body>
 
-<section>
+<!-- ======================Navbar====================== -->
+  <header>
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-right uppercase">
+              <li>
+                <a href="#" class="btn-default navlinks Navbutton">Restart</a>
+              </li>
+            </ul>
+        </div><!-- /.container-fluid -->
+      </nav>
+    </header>
+<!-- ======================Navbar End====================== -->
+
+<div class="title">
   <h1>Blackjack</h1>
-</section>
+</div>
+
+<div id="board"></div>
+
+<div>
+<button class= "Start" type="button" name="Start">Start</button>
+
+<button class= "Stand" type="button" name="Stand">Stand</button>
+
+<button class= "Deal" type="button" name="Deal">Deal</button>
+</div>
 
 </body>
 </html>
