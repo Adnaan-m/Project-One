@@ -51,11 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }else if (cardTotComp > 21 && cardTotUser <= 21) {
       alert('Computer Bust, Player Wins');
     }else if (cardTotComp === cardTotUser) {
-        alert('It\'s a Draw!');
+      alert('It\'s a Draw!');
     }
 
   } ///END OF DEALCOMP
-  
+
   //WHEN START BUTTON IS CLICKED, TWO RANDOM CARDS ARE PRESENTED
   game.startButn[0].addEventListener('click', () => {
     game.DealUser();
