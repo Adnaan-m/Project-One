@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
       game.restart();
     }else if (game.cardTotUser === game.cardTotComp) {
       game.restart();
-      alert('Both Players Bust, It\'s A Draw!');
+      alert('It\'s A Draw!');
     }else if (game.cardTotUser > game.cardTotComp) {
       game.playerScore += 1;
       game.restart();
