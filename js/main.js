@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   } ///END OF DEALCOMP
 
-  //RESTART WITHOUT REMOVING SCORE FUNCTION
+  //RESTART FUNCTION
   game.restart = () => {
     game.cardTotUser = Number([]);
     game.cardTotComp = Number([]);
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ///GAME RESET BUTTON INCLUDING SCORE RESET
   game.resetButn[0].addEventListener('click', () => {
     game.resetGame();
-  })
+  });
 
   //WHEN START BUTTON IS CLICKED, TWO RANDOM CARDS ARE PRESENTED
   game.startButn[0].addEventListener('click', () => {
