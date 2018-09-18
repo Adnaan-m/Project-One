@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
   //GATHERS THE RESTART BUTTON
   game.resetButn = document.getElementsByClassName('gameRestart');
 
-
   // DEAL RANDOM CARDS FUNCTION
   game.DealUser = () =>
   {
@@ -69,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     game.cardTotComp = Number([]);
   }
 
-///RESTART GAME COMPLETELY FUNCTION
+  ///RESTART GAME COMPLETELY FUNCTION
   game.resetGame = () => {
     game.cardTotUser = Number([]);
     game.cardTotComp = Number([]);
@@ -81,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
   game.resetButn[0].addEventListener('click', () => {
     game.resetGame();
   })
-
   //WHEN START BUTTON IS CLICKED, TWO RANDOM CARDS ARE PRESENTED
   game.startButn[0].addEventListener('click', () => {
     game.DealUser();
@@ -90,16 +88,13 @@ document.addEventListener('DOMContentLoaded', () => {
     game.DealComp();
     game.DealComp();
     console.log('Computer first two cards^');
-    game.remove.
   })
-
   //WHEN DEAL BUTTON IS CLICKED, A RANDOM CARDS IS PRESENTED
   game.dealButn[0].addEventListener('click', () => {
     game.DealUser();
 
     game.DealComp();
   });
-
   ////STAY BUTTON FUNCTIONAL
   game.stayButn[0].addEventListener('click', () => {
     if (game.cardTotUser === 0 && game.cardTotComp === 0) {
@@ -120,6 +115,5 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(`Player score is : ${game.playerScore}`);
     console.log(`Computer score is : ${game.compScore}`);
   });
-
 
 }); //End of DOCUMENT Listener
