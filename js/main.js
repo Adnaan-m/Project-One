@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   cards.cardName = [['A',11],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7],['8',8],
   ['9',9],['10',10],['J',10],['Q',10],['K',10]];
-  cards.cardSuit = ['Hearts','Diamonds','Spades','Clubs'];
+  cards.cardSuit = ['H','D','S','C'];
 
   game.startButn = document.getElementsByClassName('Start');
   game.dealButn = document.getElementsByClassName('Deal');
@@ -20,6 +20,76 @@ document.addEventListener('DOMContentLoaded', () => {
   game.playerCardSec = document.getElementsByClassName('card1');
   game.compCardSec = document.getElementsByClassName('card2');
 
+  //////CREATE ALL CARD IMAGE ELEMENTS AND STORE IN ARRAY ////////
+  let cardElementArray = [];
+
+  for (var i = 0; i < 4; i++) {
+    let suit = '';
+    switch (i) {
+      case 0:
+      suit = 'C'
+      break;
+      case 1:
+      suit = 'D'
+      break;
+      case 2:
+      suit = 'H'
+      break;
+      case 3:
+      suit = 'S'
+      break;
+      default:
+      suit = i
+    }
+    for (var j = 2; j < 15; j++) {
+      let number = '';
+      switch (j) {
+        case 11:
+        number = 'A'
+        break;
+        case 12:
+        number = 'J'
+        break;
+        case 13:
+        number = 'Q'
+        break;
+        case 14:
+        number = 'K'
+        break;
+        default:
+        number = j
+      }
+
+      const imageCard = document.createElement("img");
+      imageCard.setAttribute("src", `../images/${number}${suit}.png`)
+      imageCard.setAttribute("id", `${number}${suit}`)
+      cardElementArray.push(imageCard)
+    }
+  }
+  // game.playerCardSec.appendChild(imageCard);
+
+
+  ///////////////////////////////
+  game.DealUser = () =>{
+    let Name = cards.cardName[Math.floor(Math.random() * cards.cardName.length)];
+    let Val = Name[1];
+    let Suit = cards.cardSuit[Math.floor(Math.random() * cards.cardSuit.length)];
+
+    let card = Name[0] + Number(Val) + Suit;
+
+
+    ////////
+    for (var i = 0; i < cardElementArray.length; i++) {
+      if (Name[0] + Suit === cardElementArray[i].id) {
+        game.playerCardSec[0].appendChild(cardElementArray[i]);
+      }
+    }
+
+
+    ////////
+
+    game.cardTotUser += Val;
+  }
   game.DealComp = () =>{
     let Name = cards.cardName[Math.floor(Math.random() * cards.cardName.length)];
     let Val = Name[1];
@@ -27,24 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let card = Name[0] + Number(Val) + Suit;
     let CardArray = [Name[0]];
-    console.log(CardArray);
 
     game.cardTotComp += Val;
-    console.log(game.cardTotComp);
     ////////INPUTTING CARD SECTION
     game.showScoreP[0].innerHTML = `Player Score : ${game.playerScore}`;
-  }
-  game.DealUser = () =>{
-    let Name = cards.cardName[Math.floor(Math.random() * cards.cardName.length)];
-    let Val = Name[1];
-    let Suit = cards.cardSuit[Math.floor(Math.random() * cards.cardSuit.length)];
-
-    let card = Name[0] + Number(Val) + Suit;
-    let CardArray = [Name[0]];
-    console.log(CardArray);
-
-    game.cardTotUser += Val;
-    console.log(game.cardTotUser);
   }
   game.restart = () => {
     game.cardTotUser = Number([]);
@@ -79,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (game.cardTotUser > 21 && game.cardTotComp > 21) {
       alert('Both Players Bust, It\'s A Draw!');
       game.restart();
-    }else if (game.cardTotUser > 21 && game.cardTotComp < 22) {
+    }else if (game.cardTotUser > 21 && game.cardTotComp <= 21) {
       alert('Player Bust, Computer wins.');
       game.restart();
       game.compScore += 1;
