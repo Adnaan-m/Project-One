@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   game.showScoreP = document.getElementsByClassName('playerScore');
   game.showScoreC = document.getElementsByClassName('compScore');
   game.playerCardSec = document.getElementsByClassName('card1');
+  game.compCardSec = document.getElementsByClassName('card2');
 
   game.DealComp = () =>{
     let Name = cards.cardName[Math.floor(Math.random() * cards.cardName.length)];
@@ -30,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     game.cardTotComp += Val;
     console.log(game.cardTotComp);
+    ////////INPUTTING CARD SECTION
+    game.showScoreP[0].innerHTML = `Player Score : ${game.playerScore}`;
   }
   game.DealUser = () =>{
     let Name = cards.cardName[Math.floor(Math.random() * cards.cardName.length)];
