@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
     game.cardTotComp += Val;
     console.log(game.cardTotComp);
 
-    /////IF STATEMENT FOR GOING BUST
     if (game.cardTotUser > 21 && game.cardTotComp > 21) {
       alert('Both Players Bust, It\'s A Draw!');
       game.restart();
@@ -44,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       game.restart();
       alert('Computer Bust, Player Wins');
     }
-  } ///END OF DEALCOMP
+  }
 
   game.DealUser = () =>
   {
@@ -55,19 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let card = Name[0] + Number(Val) + Suit;
     let CardArray = [Name[0]];
     console.log(CardArray);
-//
-// game.playerCardSec[0].innerHTML = '<p> src=images/playingcard.jpg</p>';
-// Player Score : ${game.playerScore};
 
-
-
-
-
-//
     game.cardTotUser += Val;
     console.log(game.cardTotUser);
 
-  } ///END OF DEAL USER
+  }
 
   game.restart = () => {
     game.cardTotUser = Number([]);
@@ -111,7 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Computer wins.');
       game.restart();
     }
-    ///SCORE TAG
     game.showScoreP[0].innerHTML = `Player Score : ${game.playerScore}`;
     game.showScoreC[0].innerHTML = `Computer Score : ${game.compScore}`;
 
