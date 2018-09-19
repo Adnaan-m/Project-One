@@ -5,41 +5,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Project One - Blackjack</title>
-
+  <script src="js/jquery-3.3.1.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <script src="css/bootstrap-3.3.7-dist/js/bootstrap.min.js" charset="utf-8"></script>
   <link rel="stylesheet" href="css/main.css">
   <script src="js/main.js"></script>
 </head>
+
 <body>
+  <!-- ======================Top Section====================== -->
+  <section class="title">
+    <h1> < B l a c k j a c k > </h1>
+  </section>
 
-<!-- ======================Navbar====================== -->
-  <header>
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <ul class="nav navbar-nav navbar-right uppercase">
-              <li>
-                <!-- <button class="Restart" href="#" class="btn-default navlinks Navbutton">Restart</button> -->
-              </li>
-            </ul>
-        </div><!-- /.container-fluid -->
-      </nav>
-    </header>
-<!-- ======================Navbar End====================== -->
+  <!-- ======================Top Section End====================== -->
 
-<div class="title">
-  <h1>Blackjack</h1>
-</div>
 
-<div id="board"></div>
+  <!-- <Cards Go Here> -->
+  <div class="mainsection">
+    <div class="row text-center">
+      <div class=" col-md-2  bg-custom">
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">How To Play</button>
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title Instructions">Instructions:</h4>
+              </div>
+              <div class="modal-body">
+                <p class="Instructions">Two cards are presented. Add the values to reach a value of 21. <br>
+                  If you require another card, click the Hit Me! button <br>
+                  J,Q and K represent 10, A stands for 11 <br>
+                  CAREFUL! <br>
+                  If you go over 21 you lose the round.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-<div>
-<button class= "Start" type="button" name="Start">Start</button>
+          <div class="row text-center">
+            <button class="Start" type="button" name="Start">Deal</button>
+          </div>
+          <div class="row text-center">
+            <button class="gameRestart" type="button" name="Deal">Game Restart</button>
+          </div>
+          <div class="row text-center">
+            <button class="Stand" type="button" name="Stand">Stay</button>
+          </div>
+          <div class="row text-center">
+            <button class="Deal" type="button" name="Deal">Hit Me!</button>
+          </div>
 
-<button class= "Stand" type="button" name="Stand">Stand</button>
 
-<button class= "Deal" type="button" name="Deal">Deal</button>
 
-<button class= "gameRestart" type="button" name="Deal">Game Restart</button>
-</div>
+            <div class="container">
+              <div class="card1  col-md-10 bg-custom">
+                <img src="images/playingcard.jpg" alt=""></img>
+            </div>
+              <div class="card2  col-md-10 bg-custom">
+                <img src="images/playingcard.jpg" alt="">
+              </div>
+            </div>
+          </div>
 
-</body>
-</html>
+        </div>
+      </div>
+    </div>
+    <!-- =============================================================== -->
+    <div class="scoreSection">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-12 col-sm-12 col-xs-12 bg-custom">
+
+
+          <div class="col-md-6  bg-custom">
+            <h3 class="playerScore"></h3>
+          </div>
+
+
+
+            <div class="col-md-6  bg-custom">
+                <h3 class="compScore"></h3>
+              </div>
+            </div>
+            </div>
+            </div>
+            </div>
+
+
+  </body>
+  </html>

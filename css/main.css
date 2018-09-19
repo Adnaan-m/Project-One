@@ -1,0 +1,71 @@
+body{
+border: 1px solid red;
+/* background-color: #076324	; */
+background-image: url("../images/pokertable.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+.title{
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  font-family: IFC INSANE RODEO bold;
+}
+
+.Instructions{
+  color: black;
+  text-align: center;
+}
+
+h1 {
+margin-top: 0px;
+padding-top: 30px;
+padding-bottom: 30px;
+justify-content: center;
+text-align: center;
+font-size: 70px;
+
+}
+
+.mainsection{
+  margin-bottom: 50px;
+}
+
+button{
+  border-radius: 5px;
+  height: 60px;
+  width: 100px;
+}
+
+div.spacingRestart{
+  padding-top: 10px;
+}
+
+.btn{
+  width: 130px;
+  margin-left: -10px;
+}
+
+.card1{
+  height: 250px;
+  border: 1px solid black;
+}
+.card2{
+  height: 250px;
+  border: 1px solid black;
+}
+
+.buttonSection{
+  border: 1px solid black;
+}
+
+div.row.text-center img{
+  text-align: left;
+}
+
+img{
+  height:240px;
+  width: 170px;
+  text-align: left;
+}
