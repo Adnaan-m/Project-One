@@ -66,10 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cardElementArray.push(imageCard)
     }
   }
-  // game.playerCardSec.appendChild(imageCard);
-
-
-  ///////////////////////////////
+////Restart function in the DealUser function
   game.DealUser = () =>{
     let Name = cards.cardName[Math.floor(Math.random() * cards.cardName.length)];
     let Val = Name[1];
@@ -77,19 +74,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let card = Name[0] + Number(Val) + Suit;
 
-
     ////////
     for (var i = 0; i < cardElementArray.length; i++) {
       if (Name[0] + Suit === cardElementArray[i].id) {
         game.playerCardSec[0].appendChild(cardElementArray[i]);
       }
     }
-
-
     ////////
-
     game.cardTotUser += Val;
+
+
+    game.restart = () => {
+      game.cardTotUser = Number([]);
+      game.cardTotComp = Number([]);
+
+      for (var i = 0; i < cardElementArray.length; i++) {
+        console.log(Name[0] + Suit);
+        console.log(cardElementArray[i].id);
+        if ((Name[0] + Suit) === cardElementArray[i].id) {
+          game.playerCardSec[0].removeChild(cardElementArray[i]);
+        }
+      }
+    }
+
   }
+
   game.DealComp = () =>{
     let Name = cards.cardName[Math.floor(Math.random() * cards.cardName.length)];
     let Val = Name[1];
@@ -99,12 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let CardArray = [Name[0]];
 
     game.cardTotComp += Val;
-    ////////INPUTTING CARD SECTION
-    game.showScoreP[0].innerHTML = `Player Score : ${game.playerScore}`;
-  }
-  game.restart = () => {
-    game.cardTotUser = Number([]);
-    game.cardTotComp = Number([]);
   }
   game.resetGame = () => {
     game.cardTotUser = Number([]);
