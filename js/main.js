@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   game.resetButn = document.getElementsByClassName('gameRestart');
   game.showScoreP = document.getElementsByClassName('playerScore');
   game.showScoreC = document.getElementsByClassName('compScore');
+  game.playerCardSec = document.getElementsByClassName('card1');
 
   game.DealComp = () =>
   {
@@ -55,8 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let CardArray = [Name[0]];
     console.log(CardArray);
 //
-
-
+// game.playerCardSec[0].innerHTML = '<p> src=images/playingcard.jpg</p>';
+// Player Score : ${game.playerScore};
 
 
 
