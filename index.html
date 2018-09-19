@@ -8,6 +8,7 @@
   <script src="js/jquery-3.3.1.min.js" charset="utf-8"></script>
   <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.min.css">
   <script src="css/bootstrap-3.3.7-dist/js/bootstrap.min.js" charset="utf-8"></script>
+  <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
   <link rel="stylesheet" href="css/main.css">
   <script src="js/main.js"></script>
 </head>
@@ -16,82 +17,81 @@
   <section class="title">
     <h1> < B l a c k j a c k > </h1>
   </section>
-
-  <div class="mainsection">
-    <div class="row text-center">
-      <div class=" col-md-2  bg-custom">
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">How To Play</button>
-        <div class="modal fade" id="myModal" role="dialog">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title Instructions">Instructions:</h4>
-              </div>
-              <div class="modal-body">
-                <p class="Instructions">Two cards are presented. Add the values to reach a value of 21. <br>
-                  If you require another card, click the Hit Me! button <br>
-                  J,Q and K represent 10, A stands for 11 <br>
-                  CAREFUL! <br>
-                  If you go over 21 you lose the round.</p>
+  <section>
+    <div class="mainsection">
+      <div class="container-fluid">
+        <div class="row text-center">
+          <div class="col-md-2  bg-custom">
+            <button type="button" class="btn btn-info btn-lg functionalButn" data-toggle="modal" data-target="#myModal">How To Play</button>
+            <div class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title Instructions">Instructions:</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p class="Instructions">Two cards are presented. Add the values to reach a value of 21. <br>
+                      If you require another card, click the Hit Me! button <br>
+                      J,Q and K represent 10, A stands for 11 <br>
+                      CAREFUL! <br>
+                      If you go over 21 you lose the round.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
+              </div>
+
+              <div class="row text-center">
+                <button class="Start functionalButn" type="button" name="Start">Deal</button>
+              </div>
+              <div class="row text-center">
+                <button class="gameRestart functionalButn" type="button" name="Deal">Game Restart</button>
+              </div>
+              <div class="row text-center">
+                <button class="Stand functionalButn" type="button" name="Stand">Stay</button>
+              </div>
+              <div class="row text-center">
+                <button class="Deal functionalButn" type="button" name="Deal">Hit Me!</button>
               </div>
             </div>
-          </div>
-
-          <div class="row text-center">
-            <button class="Start" type="button" name="Start">Deal</button>
-          </div>
-          <div class="row text-center">
-            <button class="gameRestart" type="button" name="Deal">Game Restart</button>
-          </div>
-          <div class="row text-center">
-            <button class="Stand" type="button" name="Stand">Stay</button>
-          </div>
-          <div class="row text-center">
-            <button class="Deal" type="button" name="Deal">Hit Me!</button>
-          </div>
 
 
-
-            <div class="container">
-              <div class="card1  col-md-10 bg-custom">
-<<<<<<< HEAD
-                <img src="images/playingcard.jpg" alt=""></img>
-=======
-                <img src="images/playingcard.jpg" alt="">
->>>>>>> javascript
+            <div class="cardHeading  col-md-1 bg-custom">
+              <h4> P L A Y E R</h4>
             </div>
-              <div class="card2  col-md-10 bg-custom">
-                <img src="images/playingcard.jpg" alt="">
-              </div>
+            
+            <div class="card1  col-md-9 bg-custom">
+              <img src="images/playingcard.jpg" alt="">
+            </div>
+
+            <div class="cardHeading  col-md-1 bg-custom">
+              <h4> C O M P U T E R</h4>
+            </div>
+
+            <div class="card2  col-md-9 bg-custom">
+              <img src="images/playingcard.jpg" alt="">
             </div>
           </div>
-
         </div>
       </div>
-    </div>
-    <div class="scoreSection">
-      <div class="container">
+    </section>
+
+    <section>
+      <div class="scoreSection">
         <div class="row text-center">
           <div class="col-md-12 col-sm-12 col-xs-12 bg-custom">
-
-
-          <div class="col-md-6  bg-custom">
-            <h3 class="playerScore"></h3>
-          </div>
-
             <div class="col-md-6  bg-custom">
-                <h3 class="compScore"></h3>
-              </div>
+              <h3 class="playerScore"></h3>
             </div>
+            <div class="col-md-6  bg-custom">
+              <h3 class="compScore"></h3>
             </div>
-            </div>
-            </div>
-
-
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
   </html>
