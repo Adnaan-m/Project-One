@@ -9,57 +9,105 @@ document.addEventListener('DOMContentLoaded', () => {
 
   cards.cardName = [['A',11],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7],['8',8],
   ['9',9],['10',10],['J',10],['Q',10],['K',10]];
-  cards.cardSuit = ['Hearts','Diamonds','Spades','Clubs'];
+  cards.cardSuit = ['H','D','S','C'];
 
   game.startButn = document.getElementsByClassName('Start');
   game.dealButn = document.getElementsByClassName('Deal');
   game.stayButn = document.getElementsByClassName('Stand');
   game.resetButn = document.getElementsByClassName('gameRestart');
+  game.showScoreP = document.getElementsByClassName('playerScore');
+  game.showScoreC = document.getElementsByClassName('compScore');
+  game.playerCardSec = document.getElementsByClassName('card1');
+  game.compCardSec = document.getElementsByClassName('card2');
 
-  game.DealUser = () =>
-  {
+  //////CREATE ALL CARD IMAGE ELEMENTS AND STORE IN ARRAY ////////
+  let cardElementArray = [];
+
+  for (var i = 0; i < 4; i++) {
+    let suit = '';
+    switch (i) {
+      case 0:
+      suit = 'C'
+      break;
+      case 1:
+      suit = 'D'
+      break;
+      case 2:
+      suit = 'H'
+      break;
+      case 3:
+      suit = 'S'
+      break;
+      default:
+      suit = i
+    }
+    for (var j = 2; j < 15; j++) {
+      let number = '';
+      switch (j) {
+        case 11:
+        number = 'A'
+        break;
+        case 12:
+        number = 'J'
+        break;
+        case 13:
+        number = 'Q'
+        break;
+        case 14:
+        number = 'K'
+        break;
+        default:
+        number = j
+      }
+
+      const imageCard = document.createElement("img");
+      imageCard.setAttribute("src", `../images/${number}${suit}.png`)
+      imageCard.setAttribute("id", `${number}${suit}`)
+      cardElementArray.push(imageCard)
+    }
+  }
+////Restart function in the DealUser function
+  game.DealUser = () =>{
     let Name = cards.cardName[Math.floor(Math.random() * cards.cardName.length)];
     let Val = Name[1];
     let Suit = cards.cardSuit[Math.floor(Math.random() * cards.cardSuit.length)];
 
     let card = Name[0] + Number(Val) + Suit;
-    console.log(card);
 
+    ////////
+    for (var i = 0; i < cardElementArray.length; i++) {
+      if (Name[0] + Suit === cardElementArray[i].id) {
+        game.playerCardSec[0].appendChild(cardElementArray[i]);
+      }
+    }
+    ////////
     game.cardTotUser += Val;
-    console.log(game.cardTotUser);
 
-  } ///END OF DEAL USER
 
-  game.DealComp = () =>
-  {
+    game.restart = () => {
+      game.cardTotUser = Number([]);
+      game.cardTotComp = Number([]);
+
+      for (var i = 0; i < cardElementArray.length; i++) {
+        console.log(Name[0] + Suit);
+        console.log(cardElementArray[i].id);
+        if ((Name[0] + Suit) === cardElementArray[i].id) {
+          game.playerCardSec[0].removeChild(cardElementArray[i]);
+        }
+      }
+    }
+
+  }
+
+  game.DealComp = () =>{
     let Name = cards.cardName[Math.floor(Math.random() * cards.cardName.length)];
     let Val = Name[1];
     let Suit = cards.cardSuit[Math.floor(Math.random() * cards.cardSuit.length)];
 
     let card = Name[0] + Number(Val) + Suit;
-    console.log(card);
+    let CardArray = [Name[0]];
 
     game.cardTotComp += Val;
-    console.log(game.cardTotComp);
-
-    /////IF STATEMENT FOR GOING BUST
-    if (game.cardTotUser > 21 && game.cardTotComp > 21) {
-      game.restart();
-      alert('Both Players Bust, It\'s A Draw!');
-    }else if (game.cardTotUser > 21 && game.cardTotComp <=21) {
-      game.compScore += 1;
-      game.restart();
-      alert('Player Bust, Computer wins');
-    }else if (game.cardTotComp > 21 && game.cardTotUser <= 21) {
-      game.playerScore =+ 1;
-      game.restart();
-      alert('Computer Bust, Player Wins');
-    }
-  } ///END OF DEALCOMP
-
-  game.restart = () => {
-    game.cardTotUser = Number([]);
-    game.cardTotComp = Number([]);
   }
   game.resetGame = () => {
     game.cardTotUser = Number([]);
@@ -67,41 +115,56 @@ document.addEventListener('DOMContentLoaded', () => {
     game.playerScore = 0;
     game.compScore = 0;
   }
+  game.scores = () => {
+    game.showScoreP[0].innerHTML = `Player Score : ${game.playerScore}`;
+    game.showScoreC[0].innerHTML = `Computer Score : ${game.compScore}`;
+  }
 
   game.resetButn[0].addEventListener('click', () => {
     game.resetGame();
   })
   game.startButn[0].addEventListener('click', () => {
+    game.scores();
     game.DealUser();
-    game.DealUser();
-    console.log('Player first two cards^');
-    game.DealComp();
-    game.DealComp();
-    console.log('Computer first two cards^');
-  })
-  game.dealButn[0].addEventListener('click', () => {
     game.DealUser();
 
     game.DealComp();
+    game.DealComp();
+  })
+  game.dealButn[0].addEventListener('click', () => {
+    game.DealUser();
+    game.DealComp();
+
+    if (game.cardTotUser > 21 && game.cardTotComp > 21) {
+      alert('Both Players Bust, It\'s A Draw!');
+      game.restart();
+    }else if (game.cardTotUser > 21 && game.cardTotComp <= 21) {
+      alert('Player Bust, Computer wins.');
+      game.restart();
+      game.compScore += 1;
+    }else if (game.cardTotComp > 21 && game.cardTotUser <= 21) {
+      alert('Computer Bust, Player wins.');
+      game.restart();
+      game.playerScore =+ 1;
+    }
+    game.scores();
   });
   game.stayButn[0].addEventListener('click', () => {
     if (game.cardTotUser === 0 && game.cardTotComp === 0) {
       game.restart();
     }else if (game.cardTotUser === game.cardTotComp) {
+      alert('It\'s A Draw!');
       game.restart();
-      alert('Both Players Bust, It\'s A Draw!');
     }else if (game.cardTotUser > game.cardTotComp) {
+      alert('User wins.');
       game.playerScore += 1;
       game.restart();
-      alert('User wins.');
-    }else {
+    }else if (game.cardTotUser < game.cardTotComp) {
+      alert('Computer wins.');
       game.compScore += 1;
       game.restart();
-      alert('Computer wins.');
     }
-    ///SCORE TAG
-    console.log(`Player score is : ${game.playerScore}`);
-    console.log(`Computer score is : ${game.compScore}`);
+    game.scores();
   });
 
 });
