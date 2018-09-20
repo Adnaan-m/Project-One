@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
   game.playerCardHead = document.getElementsByClassName('card1Head');
   game.compCardSec = document.getElementsByClassName('card2');
 
-  //////CREATE ALL CARD IMAGE ELEMENTS AND STORE IN ARRAY ////////
   let cardElementArray = [];
 
   for (var i = 0; i < 4; i++) {
@@ -67,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cardElementArray.push(imageCard)
     }
   }
-  ////Restart function in the DealUser function
+
   game.DealUser = () =>{
     let Name = cards.cardName[Math.floor(Math.random() * cards.cardName.length)];
     let Val = Name[1];
@@ -75,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let card = Name[0] + Suit;
 
-    ////////
     for (var i = 0; i < cardElementArray.length; i++) {
       if (card === cardElementArray[i].id) {
         game.playerCardSec[0].appendChild(cardElementArray[i]);
@@ -84,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(cardElementArray[i].id);
       }
     }
-    ////////
     game.cardTotUser += Val;
 
 
@@ -92,15 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
       game.cardTotUser = Number([]);
       game.cardTotComp = Number([]);
       game.playerCardSec[0].innerHTML =('');
-
-
-      // for (var i = 0; i <= cardElementArray.length; i++) {
-      //   if (card === cardElementArray.id) {
-      //     game.playerCardSec[0].removeChild(cardElementArray.id);
-      //     console.log(game.playerCardSec[0]);
-      //     console.log(cardElementArray);
-      //   }
-      // }
     }
 
   }
