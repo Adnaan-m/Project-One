@@ -77,9 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
     for (var i = 0; i < cardElementArray.length; i++) {
       if (card === cardElementArray[i].id) {
         game.playerCardSec[0].appendChild(cardElementArray[i]);
-        console.log(card);
-        console.log(game.playerCardSec[0]);
-        console.log(cardElementArray[i].id);
       }
     }
     game.cardTotUser += Val;
@@ -92,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
   }
-
   game.DealComp = () =>{
     let Name = cards.cardName[Math.floor(Math.random() * cards.cardName.length)];
     let Val = Name[1];
