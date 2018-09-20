@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   game.showScoreP = document.getElementsByClassName('playerScore');
   game.showScoreC = document.getElementsByClassName('compScore');
   game.playerCardSec = document.getElementsByClassName('card1');
+  game.playerCardHead = document.getElementsByClassName('card1Head');
   game.compCardSec = document.getElementsByClassName('card2');
 
   //////CREATE ALL CARD IMAGE ELEMENTS AND STORE IN ARRAY ////////
@@ -90,14 +91,16 @@ document.addEventListener('DOMContentLoaded', () => {
     game.restart = () => {
       game.cardTotUser = Number([]);
       game.cardTotComp = Number([]);
+      game.playerCardSec[0].innerHTML =('');
+
 
       // for (var i = 0; i <= cardElementArray.length; i++) {
-        if (card === cardElementArray.id) {
-          game.playerCardSec[0].removeChild(cardElementArray.id);
-          console.log(game.playerCardSec[0]);
-          console.log(cardElementArray);
-        // }
-      }
+      //   if (card === cardElementArray.id) {
+      //     game.playerCardSec[0].removeChild(cardElementArray.id);
+      //     console.log(game.playerCardSec[0]);
+      //     console.log(cardElementArray);
+      //   }
+      // }
     }
 
   }
