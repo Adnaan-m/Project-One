@@ -23,11 +23,10 @@ padding-bottom: 30px;
 justify-content: center;
 text-align: center;
 font-size: 70px;
-
 }
 
 .mainsection{
-  margin-bottom: 50px;
+  margin-bottom: 79px;
 }
 
 button{
@@ -43,8 +42,8 @@ div.spacingRestart{
 .card1Head{
   height: 250px;
   text-align: left;
-
 }
+
 .card2{
   height: 250px;
   border-bottom:  1px dashed rgba(255,255,255,0.3);
@@ -66,7 +65,7 @@ img{
 }
 
 .functionalButn{
-  cursor: pointer;
+  cursor: grabbing;
   width: 130px;
   height: 70px;
   background: #25292C;
@@ -87,19 +86,28 @@ img{
   transition:         0.1s ease-out;
 }
 
- h4{
-  transform:  rotate(-90deg);
-  text-align: center;
-  justify-content: center;
+.functionalButn:hover{
+  /* width: 135px; */
+/* height: 75px; */
+background-color: #d7be98;
+color: #25292C;
 }
 
-.cardHeading{
-  height: auto;
-width: auto;
+
+ p{
+font-size: 21px;
+margin: 0 0 0px;
+color: #d7be98;
+}
+
+.playerScore, .compScore{
+  font-size: 17px;
 }
 
 .card1Heading{
-  height: 240px;
-  text-align: center;
-  justify-content: center;
+  transform:  rotate(-90deg);
+width: 240px;
+   height: 240px;
+display: flex;
+justify-content: center;
 }

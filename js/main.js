@@ -102,16 +102,14 @@ document.addEventListener('DOMContentLoaded', () => {
   game.resetGame = () => {
     game.cardTotUser = Number([]);
     game.cardTotComp = Number([]);
-    game.playerScore = 0;
-    game.compScore = 0;
   }
   game.scores = () => {
-    game.showScoreP[0].innerHTML = `Player Score : ${game.playerScore}`;
-    game.showScoreC[0].innerHTML = `Computer Score : ${game.compScore}`;
+    game.showScoreP[0].innerHTML = `P L A Y E R  S C O R E  :  ${game.playerScore}`;
+    game.showScoreC[0].innerHTML = `C O M P U T E R S C O R E  :  ${game.compScore}`;
   }
 
   game.resetButn[0].addEventListener('click', () => {
-    game.resetGame();
+    game.restart();
   })
   game.startButn[0].addEventListener('click', () => {
     game.scores();
@@ -127,14 +125,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (game.cardTotUser > 21 && game.cardTotComp > 21) {
       alert('Both Players Bust, It\'s A Draw!');
-      game.restart();
+      game.resetGame();
     }else if (game.cardTotUser > 21 && game.cardTotComp <= 21) {
       alert('Player Bust, Computer wins.');
-      game.restart();
+      game.resetGame();
       game.compScore += 1;
     }else if (game.cardTotComp > 21 && game.cardTotUser <= 21) {
       alert('Computer Bust, Player wins.');
-      game.restart();
+      game.resetGame();
       game.playerScore =+ 1;
     }
     game.scores();
