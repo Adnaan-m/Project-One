@@ -1,5 +1,5 @@
 # Project-One
-The following ReadMe provides information in relation to the creation of the game Blackjack using Html, CSS and Javascript. All three aspects of coding were critical and provided a fundamental part in creating a functional, well presented game. 
+The following ReadMe provides information in relation to the creation of the game Blackjack using Html, CSS and Javascript. All three aspects of coding were critical and provided a fundamental part in creating a functional, well presented game.
 
 ### Languages used
 * Javascript
@@ -12,9 +12,9 @@ The following ReadMe provides information in relation to the creation of the gam
 3. Download the files displayed.
 
 ### Live-Site
-Would you like to play the game? [Click Here](http://www.youtube.com)
+Would you like to play the game? -----un-functional until pull request acceptance----[Click Here](URL goes here)
 
-### Challenges 
+### Challenges
 1. The first challenge that was approached was the matter of starting the creation of the game from a blank screen. The skeleton of the system was created but the process of what to do after that was a little tricky. However, once the planning phase was undertaken and code was present on the screen, it soon became easier.
 2. The second obstacle was the implementation and transformation of the functional output on the console log to the actual screen. The main part of the game included the visualisation of playing cards displaying on the screen. The manner of implementing the correct cards (sourced as images) onto the screen using javascript was difficult. In the end, this was resolved through the use of loops, the following code shows the loop used to iterate through the images.
 
@@ -66,6 +66,6 @@ Would you like to play the game? [Click Here](http://www.youtube.com)
   }
 ```
 ### Learning points
-1. Javascript has ALOT of functionality, on the HTML and CSS side as well. 
+1. Javascript has ALOT of functionality, on the HTML and CSS side as well.
 2. 7 lines of Javascript code can do the exact same thing as 30 lines of code can.
 3. Planning is key!

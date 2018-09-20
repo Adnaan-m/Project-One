@@ -81,13 +81,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     game.cardTotUser += Val;
 
-
     game.restart = () => {
       game.cardTotUser = Number([]);
       game.cardTotComp = Number([]);
       game.playerCardSec[0].innerHTML =('');
     }
-
   }
   game.DealComp = () =>{
     let Name = cards.cardName[Math.floor(Math.random() * cards.cardName.length)];
@@ -154,5 +152,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     game.scores();
   });
-
+  
 });
