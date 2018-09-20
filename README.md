@@ -69,3 +69,6 @@ Would you like to play the game? -----un-functional until pull request acceptanc
 1. Javascript has ALOT of functionality, on the HTML and CSS side as well.
 2. 7 lines of Javascript code can do the exact same thing as 30 lines of code can.
 3. Planning is key!
+
+
+>**Created by: Adnaan Mamaniat!**
