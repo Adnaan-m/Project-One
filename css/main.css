@@ -87,7 +87,19 @@ img{
   transition:         0.1s ease-out;
 }
 
-.cardHeading{
+ h4{
   transform:  rotate(-90deg);
+  text-align: center;
+  justify-content: center;
+}
+
+.cardHeading{
+  height: auto;
+width: auto;
+}
+
+.card1Heading{
+  height: 240px;
+  text-align: center;
   justify-content: center;
 }
