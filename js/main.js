@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
   game.compCardSec = document.getElementsByClassName('card2');
 
   let cardElementArray = [];
-
   for (var i = 0; i < 4; i++) {
     let suit = '';
     switch (i) {
@@ -85,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
       game.cardTotUser = Number([]);
       game.cardTotComp = Number([]);
       game.playerCardSec[0].innerHTML =('');
+      game.compCardSec[0].innerHTML =('');
     }
   }
   game.DealComp = () =>{
@@ -92,9 +92,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let Val = Name[1];
     let Suit = cards.cardSuit[Math.floor(Math.random() * cards.cardSuit.length)];
 
-    let card = Name[0] + Number(Val) + Suit;
-    let CardArray = [Name[0]];
+    let card = Name[0] + Suit;
 
+    game.compCardSec[0].innerHTML += '<img src="images/playingcard.jpg" />';
     game.cardTotComp += Val;
   }
   game.resetGame = () => {
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   game.resetButn[0].addEventListener('click', () => {
     game.restart();
-  })
+  });
   game.startButn[0].addEventListener('click', () => {
     game.scores();
     game.DealUser();
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }else if (game.cardTotComp > 21 && game.cardTotUser <= 21) {
       alert('Computer Bust, Player wins.');
       game.resetGame();
-      game.playerScore =+ 1;
+      game.playerScore += 1;
     }
     game.scores();
   });
@@ -152,5 +152,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     game.scores();
   });
-  
+
 });
