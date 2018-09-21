@@ -12,7 +12,7 @@ The following ReadMe provides information in relation to the creation of the gam
 3. Download the files displayed.
 
 ### Live-Site
-Would you like to play the game? -----un-functional until pull request acceptance----[Click Here](URL goes here)
+Would you like to play the game? [Click Here](https://adnaan-m.github.io/Project-One/.)
 
 ### Challenges
 1. The first challenge that was approached was the matter of starting the creation of the game from a blank screen. The skeleton of the system was created but the process of what to do after that was a little tricky. However, once the planning phase was undertaken and code was present on the screen, it soon became easier.
