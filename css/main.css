@@ -1,0 +1,108 @@
+body{
+  background-image: url("../images/pokertable.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: sans-serif;
+}
+
+.title{
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  font-family: IFC INSANE RODEO bold;
+}
+
+.Instructions{
+  color: black;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 0px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  justify-content: center;
+  text-align: center;
+  font-size: 70px;
+}
+
+.mainsection{
+  margin-bottom: 79px;
+}
+
+div.spacingRestart{
+  padding-top: 10px;
+}
+
+.card1Head{
+  height: 250px;
+  text-align: left;
+}
+
+.card2Head{
+  height: 250px;
+  border-bottom:  1px dashed rgba(255,255,255,0.3);
+  text-align: left;
+}
+
+div.row.text-center img{
+  text-align: left;
+}
+
+img{
+  height:240px;
+  width: 170px;
+  text-align: left;
+}
+
+.scoreSection{
+  margin-top: -50px;
+}
+
+.functionalButn{
+  cursor: grabbing;
+  width: 130px;
+  height: 70px;
+  background: #25292C;
+  margin: 10px ;
+  text-align: center;
+  border-radius: 40px;
+  color: rgba(195, 185, 185, 1);
+  font-size: 18px;
+  font-family: sans-serif;
+  box-shadow: inset 1px 1px 2px rgba(255,255,255,0.3),
+  inset 3px 15px 45px rgba(255,255,255,0.1),
+  inset -1px -1px 2px rgba(0,0,0,0.5),
+  inset -3px -15px 45px rgba(0,0,0,0.2),
+  1px 5px 30px -4px rgba(0,0,0,1);
+}
+
+.functionalButn:hover{
+  background-color: #d7be98;
+  color: #25292C;
+}
+
+.functionalButn:focus{
+  outline: 0;
+}
+
+
+p {
+  font-size: 21px;
+  margin: 0 0 0px;
+  color: #d7be98 ;
+  text-shadow: 0 0 1px #d7be98;
+
+}
+
+.playerScore, .compScore{
+  font-size: 17px;
+}
+
+.card1Heading{
+  transform:  rotate(-90deg);
+  width: 240px;
+  height: 240px;
+  display: flex;
+  justify-content: center;
+}
