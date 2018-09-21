@@ -82,11 +82,17 @@ img{
   color: #25292C;
 }
 
+.functionalButn:focus{
+  outline: 0;
+}
+
 
 p {
   font-size: 21px;
   margin: 0 0 0px;
-  color: #d7be98;
+  color: #d7be98 ;
+  text-shadow: 0 0 1px #d7be98;
+
 }
 
 .playerScore, .compScore{
