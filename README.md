@@ -7,7 +7,7 @@ The following ReadMe provides information in relation to the creation of the gam
 * HTML Markup
 
 ### How to download
-1. Search for Adnaan-m in GitHub.
+1. Search for Adnaan-m in GitHub. [Click Here](https://github.com/Adnaan-m/Project-One) for the link.
 2. Search for the Project-One repository.
 3. Download the files displayed.
 

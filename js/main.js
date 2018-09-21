@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const imageCard = document.createElement("img");
-      imageCard.setAttribute("src", `../images/${number}${suit}.png`)
+      imageCard.setAttribute("src", `images/${number}${suit}.png`)
       imageCard.setAttribute("id", `${number}${suit}`)
       cardElementArray.push(imageCard)
     }
